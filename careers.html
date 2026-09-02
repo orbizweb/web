@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Us - Orbiz.one</title>
+  <meta name="description" content="Open roles at Orbiz.one - join a team of technology craftsmen working on cutting-edge Cloud, AI, and IoT projects." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+  <header id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="services.html">Services</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="products.html">AI Accelerators</a>
+        <a href="about.html">About</a>
+        <a href="careers.html" class="active" aria-current="page">Join Us</a>
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
+          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="careers">
+      <div class="container fade-up">
+        <h2 class="section-title">Join the Orbiz Tribe</h2>
+        <div class="careers-content">
+          <p>Are you a technology craftsman looking for your next challenge? We provide the space to grow, experiment,
+            and own your role. Work on cutting-edge IoT, Cloud, and AI projects.</p>
+
+          <div class="jobs-grid">
+            <div class="job-card" onclick="this.classList.toggle('active')">
+              <div class="job-card-header">
+                <span>Full Stack Developer (React/Node)</span>
+                <svg class="job-expand-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="job-details" onclick="event.stopPropagation()">
+                <p style="color: var(--brand-red); font-weight: 500;">Level: Senior (5+ years) &nbsp;|&nbsp; Focus:
+                  Scalable Cloud Architectures</p>
+                <div class="jd-section">
+                  <h5>The Role:</h5>
+                  <p>As a Senior Full Stack Developer, you will be the backbone of our product engineering team. You
+                    aren’t just writing code; you are building the "AI Accelerators" and "Digital Blueprints" that power
+                    our clients' transformation. You will take ownership of complex modules from database schema design
+                    to responsive frontend implementation.</p>
+                </div>
+                <div class="jd-section">
+                  <h5>Key Responsibilities:</h5>
+                  <ul>
+                    <li>Design and maintain high-performance, scalable web applications using the MERN/PERN stack.</li>
+                    <li>Lead the development of Orbiz GenAI Blueprint integration (RAG-based systems).</li>
+                    <li>Architect robust RESTful and GraphQL APIs to support multi-tenant cloud environments.</li>
+                    <li>Mentor junior developers and conduct rigorous code reviews to maintain "Digital Craftsmanship"
+                      standards.</li>
+                  </ul>
+                </div>
+                <div class="jd-section">
+                  <h5>Technical Requirements:</h5>
+                  <ul>
+                    <li><strong>Backend:</strong> Advanced Node.js (Express/Fastify), Typescript, and Microservices
+                      architecture.</li>
+                    <li><strong>Frontend:</strong> React.js (Hooks, Context API, Redux/Zustand) and modern CSS
+                      frameworks (Tailwind/Styled Components).</li>
+                    <li><strong>Database:</strong> Proficiency in PostgreSQL and NoSQL (MongoDB/Redis).</li>
+                    <li><strong>Cloud:</strong> Experience deploying on AWS/Azure using Docker/Kubernetes.</li>
+                  </ul>
+                </div>
+                <div style="margin-top: 2rem;">
+                  <a href="mailto:careers@orbiz.one?subject=Application for Senior Full Stack Developer"
+                    class="btn btn-primary" style="padding: 0.75rem 2rem; font-size: 0.95rem;">Apply for this Role
+                    &rarr;</a>
+                </div>
+              </div>
+            </div>
+            <div class="job-card" onclick="this.classList.toggle('active')">
+              <div class="job-card-header">
+                <span>Cloud Security Architect</span>
+                <svg class="job-expand-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="job-details" onclick="event.stopPropagation()">
+                <p style="color: var(--brand-red); font-weight: 500;">Level: Senior (7+ years) &nbsp;|&nbsp; Focus:
+                  Governance & GCC Compliance</p>
+                <div class="jd-section">
+                  <h5>The Role:</h5>
+                  <p>In our mission to be a GCC Enabler, security is our top priority. You will be responsible for
+                    designing the "SecureGuard" framework for our global clients. You will ensure that as companies
+                    scale their operations into new territories, their data remains compliant with international
+                    standards (GDPR, SOC2, HIPAA).</p>
+                </div>
+                <div class="jd-section">
+                  <h5>Key Responsibilities:</h5>
+                  <ul>
+                    <li>Design and implement end-to-end security architectures for multi-cloud environments.</li>
+                    <li>Automate security audits using CloudAudit AI tools to identify vulnerabilities in real-time.
+                    </li>
+                    <li>Define IAM (Identity & Access Management) policies and Zero Trust frameworks.</li>
+                    <li>Act as a consultant for GCC clients to ensure their offshore units meet global security
+                      benchmarks.</li>
+                  </ul>
+                </div>
+                <div class="jd-section">
+                  <h5>Technical Requirements:</h5>
+                  <ul>
+                    <li>Deep expertise in AWS Security Hub, Azure Sentinel, or Google Cloud Armor.</li>
+                    <li>Expertise in Infrastructure as Code (Terraform/CloudFormation) with a "Security-as-Code"
+                      mindset.</li>
+                    <li><strong>Certifications:</strong> CISSP, CCSP, or AWS Certified Security Specialty.</li>
+                    <li>Experience with DevSecOps pipelines and container security (Prisma Cloud/Aqua).</li>
+                  </ul>
+                </div>
+                <div style="margin-top: 2rem;">
+                  <a href="mailto:careers@orbiz.one?subject=Application for Senior Cloud Security Architect"
+                    class="btn btn-primary" style="padding: 0.75rem 2rem; font-size: 0.95rem;">Apply for this Role
+                    &rarr;</a>
+                </div>
+              </div>
+            </div>
+            <div class="job-card" onclick="this.classList.toggle('active')">
+              <div class="job-card-header">
+                <span>UI/UX Designer</span>
+                <svg class="job-expand-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="job-details" onclick="event.stopPropagation()">
+                <p style="color: var(--brand-red); font-weight: 500;">Level: Junior (1–3 years) &nbsp;|&nbsp; Focus:
+                  User-Centric Enterprise Tools</p>
+                <div class="jd-section">
+                  <h5>The Role:</h5>
+                  <p>We are looking for a creative thinker to help shape the visual identity of our internal products
+                    and client solutions. You will work closely with the founders to turn complex operational workflows
+                    into simple, elegant digital interfaces.</p>
+                </div>
+                <div class="jd-section">
+                  <h5>Key Responsibilities:</h5>
+                  <ul>
+                    <li>Create wireframes, prototypes, and high-fidelity designs for enterprise dashboards (like
+                      OpsPulse).</li>
+                    <li>Conduct user research and usability testing to refine the user journey.</li>
+                    <li>Maintain and expand the Orbiz.one design system to ensure brand consistency.</li>
+                    <li>Collaborate with developers to ensure design feasibility and pixel-perfect implementation.</li>
+                  </ul>
+                </div>
+                <div class="jd-section">
+                  <h5>Technical Requirements:</h5>
+                  <ul>
+                    <li>Proficiency in Figma (primary), Adobe Creative Suite, and prototyping tools.</li>
+                    <li>Strong understanding of typography, color theory (aligned with Orbiz branding), and grid
+                      systems.</li>
+                    <li>A portfolio demonstrating clean, functional UI for web and mobile apps.</li>
+                    <li>Basic understanding of HTML/CSS to facilitate better handoffs to engineering.</li>
+                  </ul>
+                </div>
+                <div style="margin-top: 2rem;">
+                  <a href="mailto:careers@orbiz.one?subject=Application for UI/UX Designer" class="btn btn-primary"
+                    style="padding: 0.75rem 2rem; font-size: 0.95rem;">Apply for this Role &rarr;</a>
+                </div>
+              </div>
+            </div>
+            <div class="job-card" onclick="this.classList.toggle('active')">
+              <div class="job-card-header">
+                <span>DevOps Engineer</span>
+                <svg class="job-expand-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+              <div class="job-details" onclick="event.stopPropagation()">
+                <p style="color: var(--brand-red); font-weight: 500;">Level: Junior (1–3 years) &nbsp;|&nbsp; Focus:
+                  Automation & CI/CD Excellence</p>
+                <div class="jd-section">
+                  <h5>The Role:</h5>
+                  <p>Your goal is to ensure that "nothing breaks." As a Junior DevOps Engineer, you will support our
+                    engineering teams by automating the deployment process and monitoring system health. You will play a
+                    key role in our Cloud Scaling services.</p>
+                </div>
+                <div class="jd-section">
+                  <h5>Key Responsibilities:</h5>
+                  <ul>
+                    <li>Manage and optimize CI/CD pipelines (GitHub Actions, Jenkins, or GitLab CI).</li>
+                    <li>Monitor cloud infrastructure performance and set up automated alerts using Prometheus/Grafana.
+                    </li>
+                    <li>Assist in managing containerized environments using Docker.</li>
+                    <li>Support the senior team in Infrastructure-as-Code (IaC) scripting and documentation.</li>
+                  </ul>
+                </div>
+                <div class="jd-section">
+                  <h5>Technical Requirements:</h5>
+                  <ul>
+                    <li>Hands-on experience with Linux administration and Shell scripting.</li>
+                    <li>Familiarity with cloud providers (AWS/Azure/GCP).</li>
+                    <li>Basic knowledge of Docker and Kubernetes orchestration.</li>
+                    <li>Understand the "DevOps Culture"—emphasizing communication, integration, and collaboration.</li>
+                  </ul>
+                </div>
+                <div style="margin-top: 2rem;">
+                  <a href="mailto:careers@orbiz.one?subject=Application for DevOps Engineer" class="btn btn-primary"
+                    style="padding: 0.75rem 2rem; font-size: 0.95rem;">Apply for this Role &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="mailto:careers@orbiz.one" class="btn btn-primary">Apply Now – careers@orbiz.one</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <a href="index.html" class="footer-logo">
+        <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
+      </a>
+      <div style="text-align: center; color: var(--text-muted); line-height: 1.8;">
+        Pune, Maharashtra, India<br>
+        <a href="mailto:contact@orbiz.one" style="color: var(--text-main); font-weight: 500; transition: color 0.3s;"
+          onmouseover="this.style.color='var(--brand-red)'"
+          onmouseout="this.style.color='var(--text-main)'">contact@orbiz.one</a>
+      </div>
+      <p class="footer-bottom" style="margin-top: 0;">&copy; 2026 Orbiz.one. Empowering Technology Craftsmen.</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+
+</html>
