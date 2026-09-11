@@ -149,3 +149,63 @@
       }
     });
 
+    // Contact Form Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameInput = document.getElementById('contactName');
+        const emailInput = document.getElementById('contactEmail');
+        const companyInput = document.getElementById('contactCompany');
+        const phoneInput = document.getElementById('contactPhone');
+        const messageInput = document.getElementById('contactMessage');
+        const statusBox = document.getElementById('formStatus');
+
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const company = companyInput ? companyInput.value.trim() : '';
+        const phone = phoneInput ? phoneInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
+
+        // Collect multi-checkbox selected areas of interest
+        const selectedInterests = [];
+        contactForm.querySelectorAll('input[name="interests"]:checked').forEach(cb => {
+          selectedInterests.push(cb.value);
+        });
+
+        const subject = encodeURIComponent(`Consultation Request: ${name}${company ? ' (' + company + ')' : ''}`);
+        let body = `Name: ${name}\nWork Email: ${email}\n`;
+        if (company) body += `Company: ${company}\n`;
+        if (phone) body += `Phone: ${phone}\n`;
+        if (selectedInterests.length > 0) {
+          body += `Areas of Interest: ${selectedInterests.join('; ')}\n`;
+        }
+        if (message) {
+          body += `\nProject Details & Objectives:\n${message}\n`;
+        }
+
+        // Open user's email client with prefilled details
+        const mailtoUrl = `mailto:contact@orbiz.one?subject=${subject}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoUrl;
+
+        // Accessible on-screen confirmation
+        if (statusBox) {
+          statusBox.style.display = 'block';
+          statusBox.innerHTML = `
+            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; border-radius: 8px; padding: 1.25rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 600; color: #10b981; font-size: 1.05rem;">
+                <span aria-hidden="true">&#10003;</span> Consultation Request Prepared!
+              </div>
+              <p style="margin-bottom: 0.5rem;">Your default email application has opened with your inquiry pre-filled. Please review and press send.</p>
+              <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">
+                If your email client did not open automatically, you can send your inquiry directly to: 
+                <a href="mailto:contact@orbiz.one" style="color: var(--brand-red); font-weight: 600; text-decoration: underline;">contact@orbiz.one</a>
+              </p>
+            </div>
+          `;
+          statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    }
+
+

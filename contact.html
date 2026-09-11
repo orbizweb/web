@@ -169,39 +169,81 @@
       <div class="container">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;" class="fade-up">
 
-          <!-- INQUIRY / SCHEDULE CONSULTATION CARD -->
+          <!-- INQUIRY / SCHEDULE CONSULTATION FORM CARD -->
           <div class="pillar-card" style="padding: 2.5rem; background: var(--surface-color-2);">
-            <div class="badge-tag badge-blue" style="margin-bottom: 1rem;">Schedule a Briefing</div>
-            <h2 style="font-size: 1.6rem; margin-bottom: 0.75rem; color: var(--text-main);">Request an Exploratory Call</h2>
-            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem;">
-              Select your primary area of interest to connect with the relevant leadership practice head:
+            <div class="badge-tag badge-blue" style="margin-bottom: 1rem;">Direct Consultation</div>
+            <h2 style="font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--text-main);">Schedule a Leadership Briefing</h2>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 1.75rem;">
+              Fill in your contact details and select your areas of interest to connect directly with the relevant practice head.
             </p>
 
-            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
-              <a href="mailto:contact@orbiz.one?subject=GCC%20Setup%20Inquiry" class="btn btn-outline" style="text-align: left; justify-content: flex-start; padding: 1rem 1.25rem;" aria-label="Inquire about Global Capability Center setup in India">
-                <span style="font-weight: 600;">Global Capability Center (GCC) Setup</span>
-                <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">Turnkey legal, operational, and technical establishment in India</span>
-              </a>
+            <form id="contactForm" novalidate>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Full Name <span style="color: var(--brand-red);">*</span></label>
+                  <input type="text" id="contactName" name="name" required placeholder="e.g. Alex Morgan" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">Work Email <span style="color: var(--brand-red);">*</span></label>
+                  <input type="email" id="contactEmail" name="email" required placeholder="e.g. alex@company.com" class="form-input" />
+                </div>
+              </div>
 
-              <a href="mailto:contact@orbiz.one?subject=Talent%20Pod%20Inquiry" class="btn btn-outline" style="text-align: left; justify-content: flex-start; padding: 1rem 1.25rem;" aria-label="Inquire about dedicated talent and engineering pods">
-                <span style="font-weight: 600;">Talent &amp; Team Engineering</span>
-                <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">Scale up or down instantly with TalentMatch AI vetted pods</span>
-              </a>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="contactCompany" class="form-label">Company / Organization</label>
+                  <input type="text" id="contactCompany" name="company" placeholder="e.g. Acme Enterprises" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <label for="contactPhone" class="form-label">Phone / WhatsApp (Optional)</label>
+                  <input type="tel" id="contactPhone" name="phone" placeholder="+1 (555) 000-0000" class="form-input" />
+                </div>
+              </div>
 
-              <a href="mailto:contact@orbiz.one?subject=Product%20Development%20Inquiry" class="btn btn-outline" style="text-align: left; justify-content: flex-start; padding: 1rem 1.25rem;" aria-label="Inquire about outsourced product development">
-                <span style="font-weight: 600;">Outsourced Product Development</span>
-                <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">End-to-end MVP build, cloud scaling, or legacy modernization</span>
-              </a>
+              <!-- MULTI-CHECKBOX: AREAS OF INTEREST -->
+              <div class="form-group" style="margin-top: 0.5rem;">
+                <label class="form-label" style="margin-bottom: 0.25rem;">
+                  Areas of Interest <span style="font-weight: normal; color: var(--text-muted); font-size: 0.85rem;">(Select one or more)</span>
+                </label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-card">
+                    <input type="checkbox" name="interests" value="Global Capability Center (GCC) Setup in India" />
+                    <span>Global Capability Center (GCC) Setup in India</span>
+                  </label>
+                  <label class="checkbox-card">
+                    <input type="checkbox" name="interests" value="Talent & Team Engineering (Dedicated Pods)" />
+                    <span>Talent &amp; Team Engineering (Dedicated Pods)</span>
+                  </label>
+                  <label class="checkbox-card">
+                    <input type="checkbox" name="interests" value="Outsourced Product Development (MVP / Modernization)" />
+                    <span>Outsourced Product Development (MVP / Modernization)</span>
+                  </label>
+                  <label class="checkbox-card">
+                    <input type="checkbox" name="interests" value="Employer of Record (EOR) Services" />
+                    <span>Employer of Record (EOR) Services</span>
+                  </label>
+                  <label class="checkbox-card">
+                    <input type="checkbox" name="interests" value="Proprietary AI Accelerators (CodeMorph, GenAI Blueprint, CloudAudit AI)" />
+                    <span>Proprietary AI Accelerators &amp; Force Multipliers</span>
+                  </label>
+                </div>
+              </div>
 
-              <a href="mailto:contact@orbiz.one?subject=EOR%20Inquiry" class="btn btn-outline" style="text-align: left; justify-content: flex-start; padding: 1rem 1.25rem;" aria-label="Inquire about Employer of Record services">
-                <span style="font-weight: 600;">Employer of Record (EOR)</span>
-                <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">Risk-free hiring with zero entity setup and 100% compliance</span>
-              </a>
-            </div>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Project Objectives &amp; Scope</label>
+                <textarea id="contactMessage" name="message" rows="3" placeholder="Briefly share your team goals, target timeline, or technical requirements..." class="form-input"></textarea>
+              </div>
 
-            <div style="background: var(--surface-color-1); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div id="formStatus" style="display: none; margin-bottom: 1.25rem;"></div>
+
+              <button type="submit" class="btn btn-primary" id="submitContactBtn" style="width: 100%; justify-content: center; font-size: 1.05rem; padding: 0.95rem 1.75rem; cursor: pointer;">
+                Schedule Consultation &rarr;
+              </button>
+            </form>
+
+            <div style="background: var(--surface-color-1); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 1.75rem;">
               <p style="font-size: 0.9rem; margin-bottom: 0; color: var(--text-muted);">
-                <strong style="color: var(--brand-red);">Direct Email:</strong> Write directly to our team at 
+                <strong style="color: var(--brand-red);">Prefer direct email?</strong> Write directly to 
                 <a href="mailto:contact@orbiz.one" style="color: var(--text-main); font-weight: 600; text-decoration: underline;">contact@orbiz.one</a>. Typical response time is within 4 business hours.
               </p>
             </div>
@@ -227,9 +269,9 @@
                 Every Orbiz engagement is sponsored directly by a member of our executive leadership team, ensuring that governance, architectural integrity, and strategic objectives are strictly adhered to:
               </p>
               <ul style="list-style: none; padding-left: 0; font-size: 0.95rem; line-height: 2;">
-                <li>&bull; <strong>Swami Nathan</strong> &mdash; Chief Executive Officer</li>
+                <li>&bull; <strong>Meena N Sivan</strong> &mdash; Chief Executive Officer &amp; Head of GCC Advisory</li>
                 <li>&bull; <strong>Suma Pillai</strong> &mdash; Chief Operating Officer &amp; Head of Global Governance</li>
-                <li>&bull; <strong>Meena N Sivan</strong> &mdash; Chief Technology Officer</li>
+                <li>&bull; <strong>Swami Nathan</strong> &mdash; Investor &amp; Strategic Advisor</li>
               </ul>
               <div style="margin-top: 1rem;">
                 <a href="about.html" style="font-size: 0.9rem; font-weight: 600; color: var(--brand-red);">Read Executive Biographies &rarr;</a>
