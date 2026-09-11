@@ -201,6 +201,30 @@ It documents every user request, the underlying strategic context, our technical
 
 ---
 
+### Milestone 10: Automated Lead Engine (Google Sheet Sync & Dual Email Notifications)
+* **User Request**:
+  > *"Upgrade: Direct Background Submission (No Mail Client Needed)*  
+  > *We can connect the form to a free, secure static form endpoint (such as Web3Forms, Formspree, or a Google Apps Script / Google Sheet):*  
+  > *For the Visitor: They simply click 'Submit', see a green 'Thank you, your briefing has been scheduled!' confirmation right on the page, and never have to leave the browser.*  
+  > *For You: An email notification is sent instantly to contact@orbiz.one and orbizweb@gmail.com and also create / update a google sheet on a continual basis.*  
+  > *Pl set this up - it has to send a mail to contact@orbiz.one and orbizweb@gmail.com and also create / update a google sheet on a continual basis."*
+* **Architecture & Technical Solution**:
+  - **Zero-Cost Serverless Webhook Engine**:
+    - Created [`google-apps-script-lead-engine.js`](google-apps-script-lead-engine.js) running on Google Apps Script.
+    - Captures form submissions via HTTP POST and automatically appends a new row into an active Google Sheet (`Orbiz.one Website Leads`).
+    - Automatically formats and writes styled column headers on initial run: `Timestamp | Full Name | Work Email | Company | Phone | Areas of Interest | Project Scope`.
+    - Automatically sends rich HTML and plaintext email notifications simultaneously to both **`contact@orbiz.one`** AND **`orbizweb@gmail.com`** with a one-click *"Reply Directly to Prospect"* action.
+  - **Client-Side Background Submission ([`assets/script.js`](assets/script.js))**:
+    - Implemented asynchronous background submission (`fetch()` with `mode: 'no-cors'`).
+    - Added loading state to submit button (`"Scheduling Briefing..."`).
+    - Displays an immediate on-screen confirmation card (`"✓ Briefing Request Received!"`) confirming direct dispatch to Orbiz leadership within 4 business hours.
+    - Resets form fields and clears checkbox active highlights.
+    - Provided structured dual-email `mailto:` fallback (`contact@orbiz.one` with CC to `orbizweb@gmail.com`) if offline or during initial webhook deployment.
+  - **Setup Documentation**:
+    - Created [`GOOGLE_SHEET_SETUP_GUIDE.md`](GOOGLE_SHEET_SETUP_GUIDE.md) detailing the 60-second deployment steps in Google Sheets.
+
+---
+
 ## Current Site Inventory (12 Live Pages)
 
 | # | Page URL | Title / Role | Key Features |

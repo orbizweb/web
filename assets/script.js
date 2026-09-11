@@ -149,9 +149,13 @@
       }
     });
 
-    // Contact Form & Multi-Checkbox Interactive UX
+    // Contact Form & Multi-Checkbox Interactive UX with Background Submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+      // Configuration: Connect to Google Apps Script Web App for automated Google Sheets logging & email dispatch.
+      // Follow the steps in GOOGLE_SHEET_SETUP_GUIDE.md to deploy your webhook and paste the URL below:
+      const GOOGLE_SCRIPT_WEBHOOK_URL = '';
+
       // Real-time visual feedback for multi-checkbox interest pills
       contactForm.querySelectorAll('.checkbox-card input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', () => {
@@ -176,7 +180,7 @@
         }
       });
 
-      contactForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const nameInput = document.getElementById('contactName');
         const emailInput = document.getElementById('contactEmail');
@@ -184,6 +188,7 @@
         const phoneInput = document.getElementById('contactPhone');
         const messageInput = document.getElementById('contactMessage');
         const statusBox = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitContactBtn');
 
         const name = nameInput ? nameInput.value.trim() : '';
         const email = emailInput ? emailInput.value.trim() : '';
@@ -227,44 +232,113 @@
           selectedInterests.push(cb.value);
         });
 
-        const subject = encodeURIComponent(`Executive Briefing Request: ${name}${company ? ' (' + company + ')' : ''}`);
-        let body = `Hello Orbiz Leadership,\n\nI would like to request an executive briefing regarding our technology and engineering requirements:\n\n`;
-        body += `Full Name: ${name}\n`;
-        body += `Work Email: ${email}\n`;
-        if (company) body += `Company / Organization: ${company}\n`;
-        if (phone) body += `Phone / WhatsApp: ${phone}\n`;
-        if (selectedInterests.length > 0) {
-          body += `\nSelected Areas of Interest:\n- ${selectedInterests.join('\n- ')}\n`;
+        // Visual loading state
+        const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Request Strategic Briefing &rarr;';
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Scheduling Briefing...';
+          submitBtn.style.opacity = '0.8';
         }
-        if (message) {
-          body += `\nProject Scope & Objectives:\n${message}\n`;
-        }
-        body += `\nBest regards,\n${name}`;
 
-        // Open email client prefilled
-        const mailtoUrl = `mailto:contact@orbiz.one?subject=${subject}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoUrl;
+        // Check if Webhook URL is configured
+        if (GOOGLE_SCRIPT_WEBHOOK_URL && GOOGLE_SCRIPT_WEBHOOK_URL.trim() !== '') {
+          try {
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('company', company);
+            formData.append('phone', phone);
+            formData.append('interests', selectedInterests.join(', '));
+            formData.append('message', message);
 
-        // Render on-screen confirmation
-        if (statusBox) {
-          statusBox.style.display = 'block';
-          statusBox.setAttribute('role', 'status');
-          statusBox.innerHTML = `
-            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; border-radius: 8px; padding: 1.25rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
-              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 600; color: #10b981; font-size: 1.05rem;">
-                <span aria-hidden="true">&#10003;</span> Briefing Request Ready to Dispatch!
-              </div>
-              <p style="margin-bottom: 0.75rem;">Your default email application has opened with your inquiry pre-filled. Simply click <strong>Send</strong> to submit.</p>
-              <div style="padding-top: 0.5rem; border-top: 1px dashed rgba(16, 185, 129, 0.3); font-size: 0.85rem; color: var(--text-muted);">
-                Didn't see the email prompt? 
-                <a href="${mailtoUrl}" style="color: var(--brand-red); font-weight: 600; text-decoration: underline;">Click here to open email directly</a> or email us at 
-                <a href="mailto:contact@orbiz.one" style="color: var(--text-main); font-weight: 600;">contact@orbiz.one</a>.
-              </div>
-            </div>
-          `;
-          statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            await fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              body: formData
+            });
+
+            // Instant On-Screen Confirmation (Visitor Never Leaves Site)
+            if (statusBox) {
+              statusBox.style.display = 'block';
+              statusBox.setAttribute('role', 'status');
+              statusBox.innerHTML = `
+                <div style="background: rgba(16, 185, 129, 0.12); border: 1.5px solid #10b981; border-radius: 10px; padding: 1.5rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
+                  <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; font-weight: 700; color: #10b981; font-size: 1.15rem;">
+                    <span aria-hidden="true" style="font-size: 1.3rem;">&#10003;</span> Briefing Request Received!
+                  </div>
+                  <p style="margin-bottom: 0.6rem;">Thank you, <strong>${name}</strong>. Your consultation request has been logged and sent directly to Orbiz practice leadership.</p>
+                  <p style="margin-bottom: 0; font-size: 0.88rem; color: var(--text-muted);">
+                    We have dispatched an alert to our executive team. A practice lead will connect with you at <strong>${email}</strong> within <strong>4 business hours</strong>.
+                  </p>
+                </div>
+              `;
+              statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // Reset form inputs & checkbox styling
+            contactForm.reset();
+            contactForm.querySelectorAll('.checkbox-card').forEach(c => c.classList.remove('is-checked'));
+
+          } catch (err) {
+            console.error('Submission error:', err);
+            // Fallback to mailto if network issues
+            triggerMailtoFallback(name, email, company, phone, selectedInterests, message, statusBox);
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnHtml;
+              submitBtn.style.opacity = '1';
+            }
+          }
+        } else {
+          // If webhook not yet configured, trigger structured dual mailto fallback
+          triggerMailtoFallback(name, email, company, phone, selectedInterests, message, statusBox);
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+            submitBtn.style.opacity = '1';
+          }
         }
       });
+    }
+
+    function triggerMailtoFallback(name, email, company, phone, selectedInterests, message, statusBox) {
+      const subject = encodeURIComponent(`Executive Briefing Request: ${name}${company ? ' (' + company + ')' : ''}`);
+      let body = `Hello Orbiz Leadership,\n\nI would like to request an executive briefing regarding our technology and engineering requirements:\n\n`;
+      body += `Full Name: ${name}\n`;
+      body += `Work Email: ${email}\n`;
+      if (company) body += `Company / Organization: ${company}\n`;
+      if (phone) body += `Phone / WhatsApp: ${phone}\n`;
+      if (selectedInterests.length > 0) {
+        body += `\nSelected Areas of Interest:\n- ${selectedInterests.join('\n- ')}\n`;
+      }
+      if (message) {
+        body += `\nProject Scope & Objectives:\n${message}\n`;
+      }
+      body += `\nBest regards,\n${name}`;
+
+      // Opens email prefilled to both contact@orbiz.one and orbizweb@gmail.com
+      const mailtoUrl = `mailto:contact@orbiz.one?cc=orbizweb@gmail.com&subject=${subject}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+
+      if (statusBox) {
+        statusBox.style.display = 'block';
+        statusBox.setAttribute('role', 'status');
+        statusBox.innerHTML = `
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; border-radius: 8px; padding: 1.25rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 600; color: #10b981; font-size: 1.05rem;">
+              <span aria-hidden="true">&#10003;</span> Briefing Request Ready to Dispatch!
+            </div>
+            <p style="margin-bottom: 0.75rem;">Your default email application has opened with your inquiry pre-filled to <strong>contact@orbiz.one</strong> &amp; <strong>orbizweb@gmail.com</strong>. Simply click <strong>Send</strong>.</p>
+            <div style="padding-top: 0.5rem; border-top: 1px dashed rgba(16, 185, 129, 0.3); font-size: 0.85rem; color: var(--text-muted);">
+              Didn't see the email prompt? 
+              <a href="${mailtoUrl}" style="color: var(--brand-red); font-weight: 600; text-decoration: underline;">Click here to open email directly</a> or email us at 
+              <a href="mailto:contact@orbiz.one" style="color: var(--text-main); font-weight: 600;">contact@orbiz.one</a>.
+            </div>
+          </div>
+        `;
+        statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     }
 
 
