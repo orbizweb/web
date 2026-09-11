@@ -74,3 +74,37 @@
     }, observerOptions);
 
     fadeElements.forEach(el => observer.observe(el));
+
+    // FAQ Accordion Toggle
+    document.addEventListener('click', (e) => {
+      const questionBtn = e.target.closest('.faq-question');
+      if (questionBtn) {
+        const faqItem = questionBtn.closest('.faq-item');
+        const isActive = faqItem.classList.contains('active');
+        
+        // Optional: close other open items in the same container
+        const container = faqItem.closest('.faq-container');
+        if (container) {
+          container.querySelectorAll('.faq-item.active').forEach(item => {
+            if (item !== faqItem) {
+              item.classList.remove('active');
+              const btn = item.querySelector('.faq-question');
+              if (btn) btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+
+        faqItem.classList.toggle('active');
+        questionBtn.setAttribute('aria-expanded', !isActive);
+      }
+
+      // Mobile dropdown toggle
+      const dropdownToggle = e.target.closest('.dropdown-toggle');
+      if (dropdownToggle && window.innerWidth <= 900) {
+        const parent = dropdownToggle.closest('.nav-item-dropdown');
+        if (parent) {
+          e.preventDefault();
+          parent.classList.toggle('mobile-open');
+        }
+      }
+    });
