@@ -102,16 +102,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle active" aria-current="page">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle active" aria-current="page" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -123,11 +124,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" aria-hidden="true" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -142,11 +143,13 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- HERO SECTION -->
     <section id="hero" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="bg-gradient"></div>
@@ -169,7 +172,7 @@
             From concept architecture to AI-enabled enterprise MVPs—we deliver scalable, cloud-native engineering and Legacy-to-Cloud Migration without the complexity.
           </p>
           <div class="hero-actions" style="margin-top: 2rem;">
-            <a href="mailto:contact@orbiz.one?subject=Product%20Development%20Consultation" class="btn btn-primary">Request a Consultation</a>
+            <a href="mailto:contact@orbiz.one?subject=Product%20Development%20Consultation" class="btn btn-primary" aria-label="Request a product development consultation via email">Request a Consultation</a>
             <a href="solutions.html" class="btn btn-outline">Explore All Solutions</a>
           </div>
         </div>
@@ -224,16 +227,16 @@
 
         <div class="accelerator-pill-grid fade-up">
           <div class="accelerator-pill">
-            <div class="accelerator-pill-icon">CM</div>
+            <div class="accelerator-pill-icon" aria-hidden="true">CM</div>
             <div class="accelerator-pill-info">
-              <h4>CodeMorph &mdash; Legacy Modernization Agent</h4>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-main);">CodeMorph &mdash; Legacy Modernization Agent</h3>
               <p>Our intelligent agent accelerates modernization by analyzing legacy Java, PHP, or SQL scripts and generating clean, cloud-native microservices equivalents.</p>
             </div>
           </div>
           <div class="accelerator-pill">
-            <div class="accelerator-pill-icon">GB</div>
+            <div class="accelerator-pill-icon" aria-hidden="true">GB</div>
             <div class="accelerator-pill-info">
-              <h4>Orbiz GenAI Blueprint &mdash; Enterprise RAG</h4>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-main);">Orbiz GenAI Blueprint &mdash; Enterprise RAG</h3>
               <p>A pre-configured Retrieval-Augmented Generation framework that safely connects LLMs to your private data sources with SOC2/HIPAA compliance.</p>
             </div>
           </div>
@@ -251,18 +254,18 @@
 
         <div class="process-steps fade-up">
           <div class="process-step">
-            <div class="step-badge">1</div>
-            <h4>Design (UI/UX Strategy)</h4>
+            <div class="step-badge" aria-hidden="true">1</div>
+            <h3>Design (UI/UX Strategy)</h3>
             <p>User-centric journeys and enterprise dashboard interfaces designed for intuitive usability, low cognitive load, and high workflow velocity.</p>
           </div>
           <div class="process-step">
-            <div class="step-badge">2</div>
-            <h4>Build (Full-Stack Engineering)</h4>
+            <div class="step-badge" aria-hidden="true">2</div>
+            <h3>Build (Full-Stack Engineering)</h3>
             <p>End-to-end development utilizing MERN/PERN stacks, with deep mastery in PostgreSQL, Redis, and GraphQL to support high-throughput multi-tenant environments.</p>
           </div>
           <div class="process-step">
-            <div class="step-badge">3</div>
-            <h4>Scale (Cloud &amp; Security)</h4>
+            <div class="step-badge" aria-hidden="true">3</div>
+            <h3>Scale (Cloud &amp; Security)</h3>
             <p>Production deployment across AWS, Azure, and Google Cloud with automated auto-scaling, proactive threat detection, and comprehensive data encryption.</p>
           </div>
         </div>
@@ -274,7 +277,7 @@
             <p>While elite engineering builds the product, sustained innovation is powered by the people behind the code. Explore how we engineer dedicated teams.</p>
           </div>
           <div class="cta-banner-actions">
-            <a href="talent-team-engineering.html" class="btn btn-primary">Talent &amp; Team Engineering &rarr;</a>
+            <a href="talent-team-engineering.html" class="btn btn-primary" aria-label="Explore talent and team engineering solutions">Talent &amp; Team Engineering &rarr;</a>
           </div>
         </div>
       </div>

@@ -104,16 +104,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle active" aria-current="page">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle active" aria-current="page" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -125,11 +126,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" aria-hidden="true" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -144,11 +145,13 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- HERO SECTION -->
     <section id="hero" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="bg-gradient"></div>
@@ -171,7 +174,7 @@
             Access our powerful global network to integrate specialised talent and scale up or down anytime with absolute flexibility.
           </p>
           <div class="hero-actions" style="margin-top: 2rem;">
-            <a href="mailto:contact@orbiz.one?subject=Talent%20Audit%20Request" class="btn btn-primary">Request a Talent Audit</a>
+            <a href="mailto:contact@orbiz.one?subject=Talent%20Audit%20Request" class="btn btn-primary" aria-label="Request a talent audit via email">Request a Talent Audit</a>
             <a href="solutions.html" class="btn btn-outline">Explore All Solutions</a>
           </div>
         </div>
@@ -193,7 +196,7 @@
 
         <!-- ACCELERATOR CALLOUT -->
         <div class="accelerator-pill fade-up" style="background: var(--surface-color-2); border-color: rgba(255, 19, 25, 0.3); padding: 2rem;">
-          <div class="accelerator-pill-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">TM</div>
+          <div class="accelerator-pill-icon" aria-hidden="true" style="width: 50px; height: 50px; font-size: 1.2rem;">TM</div>
           <div class="accelerator-pill-info">
             <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--text-main);">Digital Craftsmanship: The TalentMatch AI Differentiator</h3>
             <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted);">
@@ -215,19 +218,19 @@
 
         <div class="four-col-grid fade-up">
           <div class="pillar-card">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Specialised Stack Expertise</h4>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Specialised Stack Expertise</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Instant access to senior engineers proficient in Node.js, TypeScript, Go, Python, and modern frontend frameworks like React and Vue.</p>
           </div>
           <div class="pillar-card">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Database &amp; API Mastery</h4>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Database &amp; API Mastery</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Deep hands-on experience in PostgreSQL, Redis, NoSQL, and GraphQL, ensuring high-throughput data integrity and API speed.</p>
           </div>
           <div class="pillar-card">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Operational Agility</h4>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Operational Agility</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Our model empowers you to scale up or down anytime, providing the elasticity needed to manage fluctuating project demands seamlessly.</p>
           </div>
           <div class="pillar-card">
-            <h4 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Predictable Delivery</h4>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Predictable Delivery</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Governed through our "No Surprises" framework: synchronized timezones, structured sprint reporting, and total milestone transparency.</p>
           </div>
         </div>
@@ -245,31 +248,31 @@
 
         <div class="faq-container fade-up">
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-tte-1" aria-expanded="false" aria-controls="faq-a-tte-1">
               <span>How do you ensure clear communication within the team?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-tte-1" role="region" aria-labelledby="faq-q-tte-1">
               <p>Aligned with our "No Surprises" pillar, we mandate transparent delivery schedules, daily video standups, overlapping working hours, and clear reporting structures. The engineers integrate directly into your Slack, Jira, and GitHub environments as a seamless extension of your internal team.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-tte-2" aria-expanded="false" aria-controls="faq-a-tte-2">
               <span>What is the quality standard for your engineering talent?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-tte-2" role="region" aria-labelledby="faq-q-tte-2">
               <p>We hire for "Digital Craftsmanship." All candidates undergo screening via TalentMatch AI, a live architecture evaluation, and hands-on coding tests. Senior engineers are required to lead rigorous code reviews and provide mentorship, ensuring the codebase remains clean, modular, and maintainable.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-tte-3" aria-expanded="false" aria-controls="faq-a-tte-3">
               <span>How fast can we scale our team?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-tte-3" role="region" aria-labelledby="faq-q-tte-3">
               <p>Utilizing TalentMatch AI and our pre-vetted talent network in Pune and across India's premier tech hubs, we can present pre-screened candidate profiles in 48–72 hours and initiate onboarding in days—giving you immediate velocity without hiring lag.</p>
             </div>
           </div>
@@ -282,7 +285,7 @@
             <p>For enterprises seeking long-term stability and cultural integration, individual talent pods often evolve into a dedicated Global Capability Centre.</p>
           </div>
           <div class="cta-banner-actions">
-            <a href="gcc-setup-india.html" class="btn btn-primary">Explore GCC Setup in India &rarr;</a>
+            <a href="gcc-setup-india.html" class="btn btn-primary" aria-label="Explore GCC setup options in India">Explore GCC Setup in India &rarr;</a>
           </div>
         </div>
       </div>

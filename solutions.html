@@ -86,16 +86,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle active" aria-current="page">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle active" aria-current="page" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -107,11 +108,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" style="display:none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -126,11 +127,11 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span aria-hidden="true">&#9776;</span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section id="solutions" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="container">
         <div class="breadcrumb fade-up">
@@ -144,6 +145,7 @@
           of modern enterprise businesses globally.</p>
 
         <!-- SOLUTION 1 -->
+        <h2 class="sr-only">Core Strategic Solutions</h2>
         <div class="solution-item fade-up">
           <div class="solution-content">
             <div class="badge-tag">Product Engineering</div>
@@ -154,10 +156,10 @@
               <li><strong>AI-enabled delivery via CodeMorph &amp; GenAI Blueprint</strong></li>
               <li><strong>Enterprise-grade cloud quality on AWS, Azure, GCP</strong></li>
             </ul>
-            <a href="outsourced-product-development.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Explore Solution &rarr;</a>
+            <a href="outsourced-product-development.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;" aria-label="Explore Outsourced Product Development Solution">Explore Solution &rarr;</a>
           </div>
           <div class="solution-visual">
-            <svg width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+            <svg aria-hidden="true" role="img" width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
               <style>
                 @keyframes float {
                   0% { transform: translateY(0px); }
@@ -194,10 +196,10 @@
               <li><strong>Senior Node.js, TypeScript, Python, and Cloud engineers</strong></li>
               <li><strong>Elastic pods: scale up or down anytime with zero friction</strong></li>
             </ul>
-            <a href="talent-team-engineering.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Explore Solution &rarr;</a>
+            <a href="talent-team-engineering.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;" aria-label="Explore Talent &amp; Team Engineering Solution">Explore Solution &rarr;</a>
           </div>
           <div class="solution-visual">
-            <svg width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+            <svg aria-hidden="true" role="img" width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
               <style>
                 @keyframes node-pulse {
                   0% { r: 10; fill: var(--text-main); }
@@ -233,10 +235,10 @@
               <li><strong>Turnkey BOT (Build-Operate-Transfer) &amp; Captive models</strong></li>
               <li><strong>Continuous compliance monitoring via CloudAudit AI (SOC2, HIPAA)</strong></li>
             </ul>
-            <a href="gcc-setup-india.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Explore Solution &rarr;</a>
+            <a href="gcc-setup-india.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;" aria-label="Explore Global Capability Center Setup Solution">Explore Solution &rarr;</a>
           </div>
           <div class="solution-visual">
-            <svg width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+            <svg aria-hidden="true" role="img" width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
               <style>
                 @keyframes launch {
                   0% { transform: translate(0px, 0px); }
@@ -273,10 +275,10 @@
               <li><strong>Complete statutory payroll, tax, benefits, and HR management</strong></li>
               <li><strong>Seamless growth path: transition smoothly into a full GCC</strong></li>
             </ul>
-            <a href="eor-services-india.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Explore Solution &rarr;</a>
+            <a href="eor-services-india.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;" aria-label="Explore Employer of Record Services Solution">Explore Solution &rarr;</a>
           </div>
           <div class="solution-visual">
-            <svg width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+            <svg aria-hidden="true" role="img" width="250" height="250" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
               <rect x="40" y="50" width="120" height="110" rx="14" fill="var(--surface-color-1)" stroke="var(--border-color)" stroke-width="5" />
               <rect x="60" y="70" width="80" height="8" rx="4" fill="var(--brand-red)" />
               <rect x="60" y="90" width="60" height="6" rx="3" fill="var(--text-muted)" />
@@ -294,25 +296,25 @@
             specific industry challenges.</p>
           <div class="four-col-grid fade-up">
             <div class="product-card" style="padding: 2.5rem 1.5rem;">
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">M4</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">M4</div>
               <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Manufacturing &amp; Industry 4.0</h3>
               <p style="font-size: 0.9rem; margin-bottom: 0;">Deploying IoT and Digital Twin solutions to increase
                 productivity, simplify processes, and reduce downtime on the factory floor.</p>
             </div>
             <div class="product-card" style="padding: 2.5rem 1.5rem;">
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">HD</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">HD</div>
               <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Healthcare Digitalization</h3>
               <p style="font-size: 0.9rem; margin-bottom: 0;">Building secure, HIPAA-compliant platforms for remote
                 monitoring, clinical decision support, and patient data management.</p>
             </div>
             <div class="product-card" style="padding: 2.5rem 1.5rem;">
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">ES</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">ES</div>
               <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Energy &amp; Sustainability</h3>
               <p style="font-size: 0.9rem; margin-bottom: 0;">Leveraging data analytics for renewable energy
                 forecasting, asset health monitoring, and smart grid optimization.</p>
             </div>
             <div class="product-card" style="padding: 2.5rem 1.5rem;">
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">OE</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">OE</div>
               <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Enterprise Operational Excellence</h3>
               <p style="font-size: 0.9rem; margin-bottom: 0;">Transforming large-scale organizations through our
                 three-step methodology: Observation, Orientation, and Optimization.</p>

@@ -104,16 +104,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle active" aria-current="page">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle active" aria-current="page" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -125,11 +126,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" aria-hidden="true" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -144,11 +145,13 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true">&#9776;</span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- HERO SECTION -->
     <section id="hero" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="bg-gradient"></div>
@@ -171,7 +174,7 @@
             Zero legal entity setup in India. We manage the complexity of international HR, payroll, and local labour laws so you can focus on building and scaling your technology.
           </p>
           <div class="hero-actions" style="margin-top: 2rem;">
-            <a href="mailto:contact@orbiz.one?subject=EOR%20Inquiry" class="btn btn-primary">Speak with Our EOR Experts</a>
+            <a href="mailto:contact@orbiz.one?subject=EOR%20Inquiry" class="btn btn-primary" aria-label="Speak with our EOR experts via email">Speak with Our EOR Experts</a>
             <a href="solutions.html" class="btn btn-outline">Explore All Solutions</a>
           </div>
         </div>
@@ -194,7 +197,7 @@
         <!-- LEADERSHIP & CLOUDAUDIT -->
         <div class="pillars-grid fade-up" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
           <div class="pillar-card">
-            <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main);">Leadership-Led Governance</h4>
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main);">Leadership-Led Governance</h3>
             <p style="color: var(--brand-red); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem;">Operational Precision by Suma Pillai</p>
             <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
               Our EOR services are grounded in the operational rigor of Chief Operating Officer &amp; Head of Global Governance <strong>Suma Pillai</strong>. Her extensive background in fiscal governance ensures that contracts, tax filings, and local labor protocols are legally airtight and protective of your global parent entity.
@@ -202,7 +205,7 @@
           </div>
 
           <div class="pillar-card">
-            <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main);">Audited Infrastructure</h4>
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main);">Audited Infrastructure</h3>
             <p style="color: var(--brand-red); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem;">Automated Security via CloudAudit AI</p>
             <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
               We deploy our proprietary <strong>CloudAudit AI</strong> agent to monitor and evaluate all remote workstations and cloud infrastructure, verifying that code access, credentials, and data residency strictly meet <strong>GDPR, SOC2, and HIPAA</strong> standards.
@@ -223,18 +226,18 @@
 
         <div class="process-steps fade-up">
           <div class="process-step">
-            <div class="step-badge">&#10003;</div>
-            <h4>Compliance First</h4>
+            <div class="step-badge" aria-hidden="true">&#10003;</div>
+            <h3>Compliance First</h3>
             <p>We navigate all Indian labor laws, gratuity calculations, tax deductions (TDS), and standard IP assignment agreements, guaranteeing 100% legal protection.</p>
           </div>
           <div class="process-step">
-            <div class="step-badge">&#10003;</div>
-            <h4>Operational Predictability</h4>
+            <div class="step-badge" aria-hidden="true">&#10003;</div>
+            <h3>Operational Predictability</h3>
             <p>Under our "No Surprises" philosophy, you receive transparent, consolidated monthly invoicing covering compensation, benefits, and administrative fees with zero hidden markups.</p>
           </div>
           <div class="process-step">
-            <div class="step-badge">&#10003;</div>
-            <h4>Speed to Market</h4>
+            <div class="step-badge" aria-hidden="true">&#10003;</div>
+            <h3>Speed to Market</h3>
             <p>Bypass the 6-to-9 month legal entity registration cycle. Begin onboarding pre-screened technical craftsmen in days to meet immediate product deadlines.</p>
           </div>
         </div>
@@ -252,31 +255,31 @@
 
         <div class="faq-container fade-up">
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-eor-1" aria-expanded="false" aria-controls="faq-a-eor-1">
               <span>Do I need a local legal entity to hire in India?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-eor-1" role="region" aria-labelledby="faq-q-eor-1">
               <p>No. Orbiz.one acts as the legal employer of record in India. You direct your team and assign their sprint goals, while we handle employment contracts, statutory employee benefits, local payroll, tax withholding, and government reporting.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-eor-2" aria-expanded="false" aria-controls="faq-a-eor-2">
               <span>How is data security handled for remote teams?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-eor-2" role="region" aria-labelledby="faq-q-eor-2">
               <p>We combine strict NDA and IP assignment agreements with automated technical enforcement through CloudAudit AI. All developer devices and access layers are configured to conform with enterprise compliance standards including GDPR, SOC2 Type II, and HIPAA.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-eor-3" aria-expanded="false" aria-controls="faq-a-eor-3">
               <span>Can we transition EOR staff to a GCC later?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-eor-3" role="region" aria-labelledby="faq-q-eor-3">
               <p>Absolutely. Our solution suite is designed for growth. Many clients begin with an EOR pod of 5–15 engineers and, as operations mature, transition the entire team and intellectual assets seamlessly into a dedicated Global Capability Centre (GCC) under their own entity with zero operational downtime.</p>
             </div>
           </div>
@@ -289,7 +292,7 @@
             <p>Empower your digital excellence today. Speak with Orbiz.one to discover how our Digital Craftsmanship and engineering-first approach transforms global expansion.</p>
           </div>
           <div class="cta-banner-actions">
-            <a href="mailto:contact@orbiz.one?subject=EOR%20Consultation" class="btn btn-primary">Schedule Consultation &rarr;</a>
+            <a href="mailto:contact@orbiz.one?subject=EOR%20Consultation" class="btn btn-primary" aria-label="Schedule an EOR consultation via email">Schedule Consultation &rarr;</a>
           </div>
         </div>
       </div>

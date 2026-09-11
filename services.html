@@ -69,16 +69,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html" class="active" aria-current="page">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -90,11 +91,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" style="display:none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -109,11 +110,11 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span aria-hidden="true">&#9776;</span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section id="services" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="container">
         <div class="breadcrumb fade-up">
@@ -134,10 +135,11 @@
         </div>
 
         <!-- 3 CORE SERVICE PILLARS -->
+        <h2 class="sr-only">Our Core Engineering Services</h2>
         <div class="services-grid fade-up" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));">
           <!-- PILLAR 1 -->
           <div class="service-card" style="padding: 2.5rem 2rem;">
-            <div class="product-icon" style="width: 50px; height: 50px; font-size: 1.1rem; margin-bottom: 1.25rem;">PE</div>
+            <div class="product-icon" style="width: 50px; height: 50px; font-size: 1.1rem; margin-bottom: 1.25rem;" aria-hidden="true">PE</div>
             <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Digital Product Engineering</h3>
             <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
               Full lifecycle engineering from initial architectural blueprints to high-load production releases.
@@ -148,12 +150,12 @@
               <li><strong>UI/UX Design Systems:</strong> Intuitive, accessible interfaces designed for complex data-rich workflows.</li>
               <li><strong>Code Modernization:</strong> Refactoring legacy monoliths using our proprietary CodeMorph AI agent.</li>
             </ul>
-            <a href="outsourced-product-development.html" class="text-red" style="font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 1.25rem;">Explore Outsourced Product Dev &rarr;</a>
+            <a href="outsourced-product-development.html" class="text-red" style="font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 1.25rem;" aria-label="Explore Outsourced Product Development">Explore Outsourced Product Dev &rarr;</a>
           </div>
 
           <!-- PILLAR 2 -->
           <div class="service-card" style="padding: 2.5rem 2rem;">
-            <div class="product-icon" style="width: 50px; height: 50px; font-size: 1.1rem; margin-bottom: 1.25rem;">CI</div>
+            <div class="product-icon" style="width: 50px; height: 50px; font-size: 1.1rem; margin-bottom: 1.25rem;" aria-hidden="true">CI</div>
             <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Cloud &amp; Infrastructure</h3>
             <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
               Scalable, resilient cloud architectures engineered on AWS, Microsoft Azure, and Google Cloud Platform.
@@ -164,12 +166,12 @@
               <li><strong>Container Orchestration:</strong> High-density Kubernetes (EKS, AKS, GKE) and serverless architectures.</li>
               <li><strong>Continuous Security:</strong> Automated vulnerability assessments and compliance audits via CloudAudit AI.</li>
             </ul>
-            <a href="gcc-setup-india.html" class="text-red" style="font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 1.25rem;">Explore GCC Cloud Infrastructure &rarr;</a>
+            <a href="gcc-setup-india.html" class="text-red" style="font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 1.25rem;" aria-label="Explore GCC Cloud Infrastructure">Explore GCC Cloud Infrastructure &rarr;</a>
           </div>
 
           <!-- PILLAR 3 -->
           <div class="service-card" style="padding: 2.5rem 2rem;">
-            <div class="product-icon" style="width: 50px; height: 50px; font-size: 1.1rem; margin-bottom: 1.25rem;">MS</div>
+            <div class="product-icon" style="width: 50px; height: 50px; font-size: 1.1rem; margin-bottom: 1.25rem;" aria-hidden="true">MS</div>
             <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Managed Services &amp; AI</h3>
             <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
               Operational stability, continuous reliability engineering, and applied intelligent automation.
@@ -180,7 +182,7 @@
               <li><strong>Quality Engineering:</strong> Automated end-to-end regression testing and performance benchmarking.</li>
               <li><strong>Team Augmentation:</strong> Instant elastic pods of senior engineers vetted through TalentMatch AI.</li>
             </ul>
-            <a href="talent-team-engineering.html" class="text-red" style="font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 1.25rem;">Explore Talent Augmentation &rarr;</a>
+            <a href="talent-team-engineering.html" class="text-red" style="font-weight: 600; font-size: 0.95rem; display: inline-block; margin-top: 1.25rem;" aria-label="Explore Talent Augmentation">Explore Talent Augmentation &rarr;</a>
           </div>
         </div>
 
@@ -191,18 +193,18 @@
 
           <div class="process-steps">
             <div class="process-step">
-              <div class="step-badge">1</div>
-              <h4>Dedicated Engineering Pods</h4>
+              <div class="step-badge" aria-hidden="true">1</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Dedicated Engineering Pods</h3>
               <p>Autonomous, cross-functional squads (Tech Lead, Senior Engineers, QA, DevOps) working as an embedded extension of your technology team with synchronized hours.</p>
             </div>
             <div class="process-step">
-              <div class="step-badge">2</div>
-              <h4>Fixed-Outcome Milestones</h4>
+              <div class="step-badge" aria-hidden="true">2</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Fixed-Outcome Milestones</h3>
               <p>Turnkey product delivery with clearly specified scope, architectural deliverables, and commercial predictability under our "No Surprises" philosophy.</p>
             </div>
             <div class="process-step">
-              <div class="step-badge">3</div>
-              <h4>Strategic Advisory &amp; BOT</h4>
+              <div class="step-badge" aria-hidden="true">3</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Strategic Advisory &amp; BOT</h3>
               <p>Executive leadership in setting up your captive India engineering hub, managing compliance and talent until full operational transfer (Build-Operate-Transfer).</p>
             </div>
           </div>
@@ -211,7 +213,7 @@
         <!-- CTA BANNER -->
         <div class="cta-banner fade-up">
           <div class="cta-banner-content">
-            <h3>Ready to Build or Modernize Your Engineering Platform?</h3>
+            <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Ready to Build or Modernize Your Engineering Platform?</h2>
             <p>Speak with our senior architects today to evaluate your technology stack and receive an initial roadmap assessment.</p>
           </div>
           <div class="cta-banner-actions">

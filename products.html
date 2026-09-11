@@ -90,16 +90,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -111,11 +112,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" style="display:none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -130,11 +131,11 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span aria-hidden="true">&#9776;</span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section id="products" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="container">
         <div class="breadcrumb fade-up">
@@ -154,11 +155,12 @@
           </p>
         </div>
 
+        <h2 class="sr-only">Our AI Accelerator Suite</h2>
         <div class="four-col-grid fade-up">
           <!-- CODEMORPH -->
           <div class="product-card" style="padding: 2.5rem 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">CM</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">CM</div>
               <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">CodeMorph</h3>
               <p style="font-size: 0.85rem; color: var(--brand-red); font-weight: 600; margin-bottom: 1rem;">Legacy Modernization Agent</p>
               <p style="font-size: 0.925rem; line-height: 1.6; margin-bottom: 1.25rem;">
@@ -170,13 +172,13 @@
                 <li>Docker/Kubernetes ready output</li>
               </ul>
             </div>
-            <a href="outsourced-product-development.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;">Used in Product Dev &rarr;</a>
+            <a href="outsourced-product-development.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;" aria-label="Learn how CodeMorph is used in Outsourced Product Development">Used in Product Dev &rarr;</a>
           </div>
 
           <!-- ORBIZ GENAI BLUEPRINT -->
           <div class="product-card" style="padding: 2.5rem 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">GenAI</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">GenAI</div>
               <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">Orbiz GenAI Blueprint</h3>
               <p style="font-size: 0.85rem; color: var(--brand-red); font-weight: 600; margin-bottom: 1rem;">Enterprise RAG Accelerator</p>
               <p style="font-size: 0.925rem; line-height: 1.6; margin-bottom: 1.25rem;">
@@ -188,13 +190,13 @@
                 <li>Private tenant data isolation</li>
               </ul>
             </div>
-            <a href="services.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;">Used in Applied AI &rarr;</a>
+            <a href="services.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;" aria-label="Learn how Orbiz GenAI Blueprint is used in Applied AI Services">Used in Applied AI &rarr;</a>
           </div>
 
           <!-- TALENTMATCH AI -->
           <div class="product-card" style="padding: 2.5rem 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">TM</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">TM</div>
               <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">TalentMatch AI</h3>
               <p style="font-size: 0.85rem; color: var(--brand-red); font-weight: 600; margin-bottom: 1rem;">GCC &amp; Team Hiring Engine</p>
               <p style="font-size: 0.925rem; line-height: 1.6; margin-bottom: 1.25rem;">
@@ -206,13 +208,13 @@
                 <li>Over 95% 90-day retention fit</li>
               </ul>
             </div>
-            <a href="talent-team-engineering.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;">Used in Talent Engineering &rarr;</a>
+            <a href="talent-team-engineering.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;" aria-label="Learn how TalentMatch AI is used in Talent Engineering">Used in Talent Engineering &rarr;</a>
           </div>
 
           <!-- CLOUDAUDIT AI -->
           <div class="product-card" style="padding: 2.5rem 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;">CA</div>
+              <div class="product-icon" style="font-size: 1rem; width: 60px; height: 60px; margin-bottom: 1.5rem;" aria-hidden="true">CA</div>
               <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">CloudAudit AI</h3>
               <p style="font-size: 0.85rem; color: var(--brand-red); font-weight: 600; margin-bottom: 1rem;">Governance &amp; Compliance Scanner</p>
               <p style="font-size: 0.925rem; line-height: 1.6; margin-bottom: 1.25rem;">
@@ -224,14 +226,14 @@
                 <li>Zero-trust IAM policy verification</li>
               </ul>
             </div>
-            <a href="gcc-setup-india.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;">Used in GCC &amp; EOR &rarr;</a>
+            <a href="gcc-setup-india.html" class="text-red" style="font-weight: 600; font-size: 0.9rem;" aria-label="Learn how CloudAudit AI is used in GCC and EOR Enablement">Used in GCC &amp; EOR &rarr;</a>
           </div>
         </div>
 
         <!-- CTA BANNER -->
         <div class="cta-banner fade-up">
           <div class="cta-banner-content">
-            <h3>Accelerate Your Product Roadmap with Proprietary AI</h3>
+            <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Accelerate Your Product Roadmap with Proprietary AI</h2>
             <p>Our accelerators are integrated directly into our client engagements at no extra licensing fee, delivering maximum velocity from day one.</p>
           </div>
           <div class="cta-banner-actions">

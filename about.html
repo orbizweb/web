@@ -91,16 +91,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -112,11 +113,11 @@
         <a href="about.html" class="active" aria-current="page">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" style="display:none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -131,11 +132,11 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span aria-hidden="true">&#9776;</span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section id="about" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="container">
         <div class="breadcrumb fade-up">
@@ -153,22 +154,22 @@
             <h2 class="brand-font" style="font-size: 2rem; margin-bottom: 1.5rem;">How We Think: Engineering Philosophy</h2>
             <div class="four-col-grid fade-up" style="margin-top: 1.5rem; margin-bottom: 3.5rem;">
               <div class="product-card" style="padding: 2rem 1.5rem; text-align: left;">
-                <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">Move Fast, Stay Simple</h4>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">Move Fast, Stay Simple</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 0;">Solve engineering hurdles without unnecessary bureaucracy or architectural bloat.</p>
               </div>
 
               <div class="product-card" style="padding: 2rem 1.5rem; text-align: left;">
-                <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">Build for Scale</h4>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">Build for Scale</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 0;">Every system is architected for resilience and global expansion from the first line of code.</p>
               </div>
 
               <div class="product-card" style="padding: 2rem 1.5rem; text-align: left;">
-                <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">Automate First</h4>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">Automate First</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 0;">Embed automated pipelines and AI accelerators early to eliminate technical debt before it starts.</p>
               </div>
 
               <div class="product-card" style="padding: 2rem 1.5rem; text-align: left;">
-                <h4 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">No Surprises</h4>
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-heading);">No Surprises</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 0;">Transparent delivery, synchronized sprint metrics, and predictable commercial milestones.</p>
               </div>
             </div>
@@ -182,15 +183,15 @@
                     style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-red);">
                   <div>
                     <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Chief Executive Officer &amp; Head of GCC Advisory</span>
-                    <h4 style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
+                    <h3 style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
                       Meena N Sivan
                       <a href="https://www.linkedin.com/in/meenasivan/" target="_blank" rel="noopener noreferrer"
-                        style="color: #0077b5; display: inline-flex; transition: opacity 0.3s;" aria-label="LinkedIn Profile of Meena N Sivan">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        style="color: #0077b5; display: inline-flex; align-items: center; justify-content: center; min-width: 24px; min-height: 24px; transition: opacity 0.3s;" aria-label="LinkedIn Profile of Meena N Sivan">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                       </a>
-                    </h4>
+                    </h3>
                   </div>
                 </div>
                 <p style="margin-bottom: 0; font-size: 0.95rem; line-height: 1.7;">
@@ -205,15 +206,15 @@
                     style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-red);">
                   <div>
                     <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Chief Operating Officer &amp; Head of Global Governance</span>
-                    <h4 style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
+                    <h3 style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
                       Suma Pillai
                       <a href="https://www.linkedin.com/in/suma-pillai/" target="_blank" rel="noopener noreferrer"
-                        style="color: #0077b5; display: inline-flex; transition: opacity 0.3s;" aria-label="LinkedIn Profile of Suma Pillai">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        style="color: #0077b5; display: inline-flex; align-items: center; justify-content: center; min-width: 24px; min-height: 24px; transition: opacity 0.3s;" aria-label="LinkedIn Profile of Suma Pillai">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                       </a>
-                    </h4>
+                    </h3>
                   </div>
                 </div>
                 <p style="margin-bottom: 0; font-size: 0.95rem; line-height: 1.7;">
@@ -231,15 +232,15 @@
                     style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 2px solid var(--brand-red);">
                   <div>
                     <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Strategic Advisor &amp; Investor</span>
-                    <h4 style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
+                    <h3 style="margin-bottom: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem;">
                       Swami Nathan
                       <a href="https://www.linkedin.com/in/2swami/" target="_blank" rel="noopener noreferrer"
-                        style="color: #0077b5; display: inline-flex; transition: opacity 0.3s;" aria-label="LinkedIn Profile of Swami Nathan">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        style="color: #0077b5; display: inline-flex; align-items: center; justify-content: center; min-width: 24px; min-height: 24px; transition: opacity 0.3s;" aria-label="LinkedIn Profile of Swami Nathan">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                       </a>
-                    </h4>
+                    </h3>
                   </div>
                 </div>
                 <p style="margin-bottom: 0; font-size: 0.95rem; line-height: 1.7;">
@@ -255,15 +256,15 @@
             </p>
             <div class="pillars-grid fade-up" style="margin-top: 2rem; margin-bottom: 0;">
               <div class="pillar-card" style="padding: 2rem 1.5rem;">
-                <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Integrity</h4>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Integrity</h3>
                 <p style="font-size: 0.95rem; margin-bottom: 0;">We do what we say, and say what we mean. Absolute transparency in code, billing, and communication.</p>
               </div>
               <div class="pillar-card" style="padding: 2rem 1.5rem;">
-                <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Innovation</h4>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Innovation</h3>
                 <p style="font-size: 0.95rem; margin-bottom: 0;">We bring fresh, applied AI thinking to every engagement, turning complex technologies into real competitive advantages.</p>
               </div>
               <div class="pillar-card" style="padding: 2rem 1.5rem;">
-                <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Certainty</h4>
+                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Certainty</h3>
                 <p style="font-size: 0.95rem; margin-bottom: 0;">We deliver predictable, low-risk outcomes through disciplined software craft and rigorous operational frameworks.</p>
               </div>
             </div>

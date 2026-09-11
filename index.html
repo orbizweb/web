@@ -61,16 +61,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -82,11 +83,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" style="display:none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -101,11 +102,11 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span aria-hidden="true">&#9776;</span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- HERO SECTION -->
     <section id="hero">
       <div class="bg-gradient"></div>
@@ -122,22 +123,22 @@
         <br />
         <br />
 
-        <h3 class="brand-font fade-up" style="font-size: 2rem; margin-bottom: 1.5rem; text-align: left;">How We Work</h3>
+        <h2 class="brand-font fade-up" style="font-size: 2rem; margin-bottom: 1.5rem; text-align: left;">How We Work</h2>
         <div class="four-col-grid fade-up" style="margin-bottom: 4rem;">
           <div class="pillar-card" style="padding: 2rem 1.5rem;">
-            <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Strategy</h4>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Strategy</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Clear roadmap synchronized with commercial business outcomes.</p>
           </div>
           <div class="pillar-card" style="padding: 2rem 1.5rem;">
-            <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Engineering</h4>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Engineering</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Scalable, cloud-native microservices and fault-tolerant architectures.</p>
           </div>
           <div class="pillar-card" style="padding: 2rem 1.5rem;">
-            <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">AI &amp; Automation</h4>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">AI &amp; Automation</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Proprietary accelerators that turn data and legacy code into business impact.</p>
           </div>
           <div class="pillar-card" style="padding: 2rem 1.5rem;">
-            <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Security &amp; Scale</h4>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Security &amp; Scale</h3>
             <p style="font-size: 0.95rem; margin-bottom: 0;">Built for GDPR, SOC2, and HIPAA compliance with continuous AI auditing.</p>
           </div>
         </div>
@@ -187,22 +188,22 @@
           <div class="service-card" style="padding: 2rem 1.75rem;">
             <h3 style="font-size: 1.25rem;">Outsourced Product Dev</h3>
             <p style="font-size: 0.95rem;">End-to-end design, build, and scale engineering powered by CodeMorph AI modernization.</p>
-            <a href="outsourced-product-development.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);">Learn more &rarr;</a>
+            <a href="outsourced-product-development.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);" aria-label="Learn more about Outsourced Product Development">Learn more &rarr;</a>
           </div>
           <div class="service-card" style="padding: 2rem 1.75rem;">
             <h3 style="font-size: 1.25rem;">Talent &amp; Team Engineering</h3>
             <p style="font-size: 0.95rem;">Instant deployment of senior tech talent and elastic pods vetted by TalentMatch AI.</p>
-            <a href="talent-team-engineering.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);">Learn more &rarr;</a>
+            <a href="talent-team-engineering.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);" aria-label="Learn more about Talent and Team Engineering">Learn more &rarr;</a>
           </div>
           <div class="service-card" style="padding: 2rem 1.75rem;">
             <h3 style="font-size: 1.25rem;">Global Capability Center</h3>
             <p style="font-size: 0.95rem;">Launch your India tech innovation hub in Pune with Day-1 readiness and turnkey BOT models.</p>
-            <a href="gcc-setup-india.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);">Learn more &rarr;</a>
+            <a href="gcc-setup-india.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);" aria-label="Learn more about Global Capability Center setup in India">Learn more &rarr;</a>
           </div>
           <div class="service-card" style="padding: 2rem 1.75rem;">
             <h3 style="font-size: 1.25rem;">Employer of Record (EOR)</h3>
             <p style="font-size: 0.95rem;">Zero legal entity setup. Risk-free remote hiring with complete statutory HR and payroll management.</p>
-            <a href="eor-services-india.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);">Learn more &rarr;</a>
+            <a href="eor-services-india.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);" aria-label="Learn more about Employer of Record services in India">Learn more &rarr;</a>
           </div>
         </div>
 
@@ -210,17 +211,17 @@
           <div class="service-card">
             <h3>Technology Services</h3>
             <p>Cloud scaling, product modernization, DevSecOps pipelines, and 24/7 managed reliability.</p>
-            <a href="services.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);">Explore Services &rarr;</a>
+            <a href="services.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);" aria-label="Explore Technology Services">Explore Services &rarr;</a>
           </div>
           <div class="service-card">
             <h3>AI Accelerators</h3>
             <p>Proprietary force multipliers: CodeMorph, GenAI Blueprint, TalentMatch AI, and CloudAudit AI.</p>
-            <a href="products.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);">Explore Accelerators &rarr;</a>
+            <a href="products.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);" aria-label="Explore AI Accelerators">Explore Accelerators &rarr;</a>
           </div>
           <div class="service-card">
             <h3>About Orbiz.one</h3>
             <p>Our executive leadership team, advisors, investors, and founding values of Integrity and Certainty.</p>
-            <a href="about.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);">Meet Leadership &rarr;</a>
+            <a href="about.html" class="text-red" style="font-weight: 600; font-family: var(--font-heading);" aria-label="Meet Orbiz Leadership and Advisors">Meet Leadership &rarr;</a>
           </div>
         </div>
       </div>

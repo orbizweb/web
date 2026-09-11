@@ -104,16 +104,17 @@
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <header id="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">
         <img src="assets/images/orbiz-logo.png" alt="Orbiz.one Logo" />
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
         <a href="services.html">Services</a>
         <div class="nav-item-dropdown">
-          <a href="solutions.html" class="dropdown-toggle active" aria-current="page">Solutions <span class="dropdown-arrow">&#9662;</span></a>
+          <a href="solutions.html" class="dropdown-toggle active" aria-current="page" role="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="dropdown-arrow" aria-hidden="true">&#9662;</span></a>
           <div class="dropdown-menu">
             <a href="outsourced-product-development.html">Outsourced Product Development</a>
             <a href="talent-team-engineering.html">Talent & Team Engineering</a>
@@ -125,11 +126,11 @@
         <a href="about.html">About</a>
         <a href="careers.html">Join Us</a>
         <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <svg id="moonIcon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
-          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          <svg id="sunIcon" style="display:none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -144,11 +145,11 @@
           </svg>
         </button>
       </nav>
-      <div class="nav-toggle" id="mobileMenuBtn">&#9776;</div>
+      <button type="button" class="nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span aria-hidden="true">&#9776;</span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- HERO SECTION -->
     <section id="hero" style="padding-top: 130px; padding-bottom: 60px;">
       <div class="bg-gradient"></div>
@@ -217,7 +218,7 @@
 
         <!-- CLOUDAUDIT AI INTEGRATION -->
         <div class="accelerator-pill fade-up" style="background: var(--surface-color-2); margin-top: 2.5rem; border-color: rgba(255, 19, 25, 0.3); padding: 2rem;">
-          <div class="accelerator-pill-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">CA</div>
+          <div class="accelerator-pill-icon" style="width: 50px; height: 50px; font-size: 1.2rem;" aria-hidden="true">CA</div>
           <div class="accelerator-pill-info">
             <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main);">Continuous Compliance: CloudAudit AI</h4>
             <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 0;">
@@ -239,35 +240,36 @@
 
         <div class="process-steps fade-up">
           <div class="process-step">
-            <div class="step-badge">1</div>
-            <h4>1. Setup &amp; Governance</h4>
+            <div class="step-badge" aria-hidden="true">1</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">1. Setup &amp; Governance</h3>
             <p>Establish legal entity structures, banking, real estate, hardware procurement, and our "SecureGuard" security and data privacy frameworks.</p>
           </div>
           <div class="process-step">
-            <div class="step-badge">2</div>
-            <h4>2. Talent &amp; Culture</h4>
+            <div class="step-badge" aria-hidden="true">2</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">2. Talent &amp; Culture</h3>
             <p>Leverage TalentMatch AI to recruit elite engineers tailored to your exact tech stack (MERN/PERN, Cloud, AI) and aligned with your cultural ethos.</p>
           </div>
           <div class="process-step">
-            <div class="step-badge">3</div>
-            <h4>3. Operations &amp; Scale</h4>
+            <div class="step-badge" aria-hidden="true">3</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">3. Operations &amp; Scale</h3>
             <p>Comprehensive ongoing management: payroll, benefits, statutory compliance, and infrastructure management for a seamless, risk-mitigated environment.</p>
           </div>
         </div>
 
         <!-- COMPARISON TABLE -->
         <div class="fade-up" style="margin-top: 4rem;">
-          <h3 class="brand-font" style="font-size: 1.75rem; margin-bottom: 1rem;">Selecting the Right Engagement Model</h3>
+          <h2 class="brand-font" style="font-size: 2rem; margin-bottom: 1rem;">Selecting the Right Engagement Model</h2>
           <p style="max-width: 800px; margin-bottom: 2rem;">Depending on your organization's maturity and timeline, we offer flexible pathways to establish your India presence:</p>
 
           <div class="table-container">
             <table class="styled-table">
+              <caption class="sr-only">Comparison of GCC Engagement Models: Direct Captive vs Orbiz BOT vs Employer of Record</caption>
               <thead>
                 <tr>
-                  <th>Dimension</th>
-                  <th>Direct Captive GCC</th>
-                  <th class="highlight-col">Orbiz BOT Model (Recommended)</th>
-                  <th>Employer of Record (EOR)</th>
+                  <th scope="col">Dimension</th>
+                  <th scope="col">Direct Captive GCC</th>
+                  <th scope="col" class="highlight-col">Orbiz BOT Model (Recommended)</th>
+                  <th scope="col">Employer of Record (EOR)</th>
                 </tr>
               </thead>
               <tbody>
@@ -278,28 +280,28 @@
                   <td>1 &ndash; 2 Weeks</td>
                 </tr>
                 <tr>
-                  <td><strong>Legal Entity in India</strong></td>
-                  <td>Required immediately</td>
-                  <td class="highlight-col"><strong>Orbiz holds initially, transfers later</strong></td>
-                  <td>None required</td>
+                  <td><strong>Legal Entity Setup</strong></td>
+                  <td>Required immediately (high capex)</td>
+                  <td class="highlight-col">Zero entity required during Build &amp; Operate phase</td>
+                  <td>Zero entity setup ever required</td>
                 </tr>
                 <tr>
-                  <td><strong>IP &amp; Asset Ownership</strong></td>
-                  <td>Client Owned</td>
-                  <td class="highlight-col"><strong>Direct Client Ownership &amp; Ring-fenced</strong></td>
-                  <td>Protected via Master Agreement</td>
+                  <td><strong>Compliance &amp; Tax Risk</strong></td>
+                  <td>Borne 100% by your organization</td>
+                  <td class="highlight-col">Shielded by Orbiz.one frameworks and CloudAudit AI</td>
+                  <td>Shielded 100% by Orbiz.one legal infrastructure</td>
                 </tr>
                 <tr>
-                  <td><strong>Compliance Burden</strong></td>
-                  <td>100% on Client</td>
-                  <td class="highlight-col"><strong>Managed completely by Orbiz.one</strong></td>
-                  <td>100% Managed by Orbiz.one</td>
+                  <td><strong>Team Ownership</strong></td>
+                  <td>Direct employees</td>
+                  <td class="highlight-col">Dedicated pod transitioning into 100% captive ownership</td>
+                  <td>Employed by Orbiz.one, directed by you</td>
                 </tr>
                 <tr>
-                  <td><strong>Long-Term Suitability</strong></td>
-                  <td>Large Enterprises (500+ staff)</td>
-                  <td class="highlight-col"><strong>Fast-scaling Enterprises (20 &ndash; 200+ staff)</strong></td>
-                  <td>Initial Pilots &amp; Remote Pods (1 &ndash; 25 staff)</td>
+                  <td><strong>Scalability</strong></td>
+                  <td>High friction to pivot</td>
+                  <td class="highlight-col">Elastic pods, frictionless scale</td>
+                  <td>Instant scaling per role</td>
                 </tr>
               </tbody>
             </table>
@@ -308,42 +310,42 @@
       </div>
     </section>
 
-    <!-- FAQ SECTION (SCHEMA-READY) -->
+    <!-- FAQ SECTION -->
     <section style="background-color: var(--surface-color-1); padding: 5rem 0; border-top: 1px solid var(--border-color);">
       <div class="container">
-        <div class="fade-up" style="text-align: center; max-width: 760px; margin: 0 auto;">
+        <div class="fade-up" style="max-width: 780px; margin-bottom: 3.5rem;">
           <div class="badge-tag">GCC Advisory Insights</div>
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Key questions answered by our GCC setup advisors and operations team.</p>
+          <h2 class="section-title" style="text-align: left;">Frequently Asked Questions</h2>
+          <p class="section-subtitle" style="text-align: left; margin: 0 0 2rem 0;">Key questions answered by our GCC setup advisors and operations team.</p>
         </div>
 
         <div class="faq-container fade-up">
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-gcc-1" aria-expanded="false" aria-controls="faq-a-gcc-1">
               <span>What is the typical timeline to launch a GCC in India with Orbiz.one?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-gcc-1" role="region" aria-labelledby="faq-q-gcc-1">
               <p>While traditional captive setups require 12 to 18 months of bureaucratic navigation, our turnkey Build-Operate-Transfer (BOT) and incubation frameworks achieve Day-1 delivery readiness in under 90 days. We utilize pre-established legal infrastructure, immediate IT provisioning, and rapid TalentMatch AI sourcing.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-gcc-2" aria-expanded="false" aria-controls="faq-a-gcc-2">
               <span>Why is Pune considered an ideal destination for an engineering GCC?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-gcc-2" role="region" aria-labelledby="faq-q-gcc-2">
               <p>Pune is recognized as the Oxford of the East, producing over 35,000 engineering and STEM graduates annually. It features established IT hubs like Hinjawadi and Magarpatta, boasts lower talent attrition compared to other tier-1 cities, and offers a favorable cost of living—enabling higher retention of senior craftsmen.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
+            <button type="button" class="faq-question" id="faq-q-gcc-3" aria-expanded="false" aria-controls="faq-a-gcc-3">
               <span>How does the Build-Operate-Transfer (BOT) model work for GCC setup?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-a-gcc-3" role="region" aria-labelledby="faq-q-gcc-3">
               <p>Under the BOT model, Orbiz.one handles the initial setup, infrastructure, and hiring (Build), manages day-to-day operations, payroll, and compliance (Operate), and cleanly transfers 100% of the team, facility, and assets to your global entity at a predetermined milestone without operational disruption.</p>
             </div>
           </div>
@@ -352,11 +354,11 @@
         <!-- TRANSITION TO EOR -->
         <div class="cta-banner fade-up">
           <div class="cta-banner-content">
-            <h3>Need to Start Immediately Without an Entity?</h3>
+            <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem; font-family: var(--font-heading);">Need to Start Immediately Without an Entity?</h2>
             <p>Discover how our Employer of Record (EOR) services let you hire and direct Indian tech talent in days before transitioning into a full GCC.</p>
           </div>
           <div class="cta-banner-actions">
-            <a href="eor-services-india.html" class="btn btn-primary">Explore EOR Services in India &rarr;</a>
+            <a href="eor-services-india.html" class="btn btn-primary" aria-label="Explore Employer of Record Services in India">Explore EOR Services in India &rarr;</a>
           </div>
         </div>
       </div>
