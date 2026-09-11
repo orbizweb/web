@@ -149,9 +149,33 @@
       }
     });
 
-    // Contact Form Handler
+    // Contact Form & Multi-Checkbox Interactive UX
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+      // Real-time visual feedback for multi-checkbox interest pills
+      contactForm.querySelectorAll('.checkbox-card input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          const card = checkbox.closest('.checkbox-card');
+          if (card) {
+            if (checkbox.checked) {
+              card.classList.add('is-checked');
+            } else {
+              card.classList.remove('is-checked');
+            }
+          }
+        });
+      });
+
+      // Clear validation errors on input
+      ['contactName', 'contactEmail'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', () => {
+            el.classList.remove('has-error');
+          });
+        }
+      });
+
       contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const nameInput = document.getElementById('contactName');
@@ -167,40 +191,75 @@
         const phone = phoneInput ? phoneInput.value.trim() : '';
         const message = messageInput ? messageInput.value.trim() : '';
 
+        // Validation: Name and Email
+        let hasError = false;
+        if (!name) {
+          if (nameInput) nameInput.classList.add('has-error');
+          hasError = true;
+        }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailPattern.test(email)) {
+          if (emailInput) emailInput.classList.add('has-error');
+          hasError = true;
+        }
+
+        if (hasError) {
+          if (statusBox) {
+            statusBox.style.display = 'block';
+            statusBox.setAttribute('role', 'alert');
+            statusBox.innerHTML = `
+              <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; border-radius: 8px; padding: 0.9rem 1.1rem; color: var(--text-main); font-size: 0.9rem;">
+                <strong style="color: #ef4444;">Please check required fields:</strong> Provide your Full Name and a valid Work Email so our leadership team can contact you.
+              </div>
+            `;
+          }
+          if (!name && nameInput) {
+            nameInput.focus();
+          } else if (emailInput) {
+            emailInput.focus();
+          }
+          return;
+        }
+
         // Collect multi-checkbox selected areas of interest
         const selectedInterests = [];
         contactForm.querySelectorAll('input[name="interests"]:checked').forEach(cb => {
           selectedInterests.push(cb.value);
         });
 
-        const subject = encodeURIComponent(`Consultation Request: ${name}${company ? ' (' + company + ')' : ''}`);
-        let body = `Name: ${name}\nWork Email: ${email}\n`;
-        if (company) body += `Company: ${company}\n`;
-        if (phone) body += `Phone: ${phone}\n`;
+        const subject = encodeURIComponent(`Executive Briefing Request: ${name}${company ? ' (' + company + ')' : ''}`);
+        let body = `Hello Orbiz Leadership,\n\nI would like to request an executive briefing regarding our technology and engineering requirements:\n\n`;
+        body += `Full Name: ${name}\n`;
+        body += `Work Email: ${email}\n`;
+        if (company) body += `Company / Organization: ${company}\n`;
+        if (phone) body += `Phone / WhatsApp: ${phone}\n`;
         if (selectedInterests.length > 0) {
-          body += `Areas of Interest: ${selectedInterests.join('; ')}\n`;
+          body += `\nSelected Areas of Interest:\n- ${selectedInterests.join('\n- ')}\n`;
         }
         if (message) {
-          body += `\nProject Details & Objectives:\n${message}\n`;
+          body += `\nProject Scope & Objectives:\n${message}\n`;
         }
+        body += `\nBest regards,\n${name}`;
 
-        // Open user's email client with prefilled details
+        // Open email client prefilled
         const mailtoUrl = `mailto:contact@orbiz.one?subject=${subject}&body=${encodeURIComponent(body)}`;
         window.location.href = mailtoUrl;
 
-        // Accessible on-screen confirmation
+        // Render on-screen confirmation
         if (statusBox) {
           statusBox.style.display = 'block';
+          statusBox.setAttribute('role', 'status');
           statusBox.innerHTML = `
             <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; border-radius: 8px; padding: 1.25rem; color: var(--text-main); font-size: 0.95rem; line-height: 1.6;">
               <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-weight: 600; color: #10b981; font-size: 1.05rem;">
-                <span aria-hidden="true">&#10003;</span> Consultation Request Prepared!
+                <span aria-hidden="true">&#10003;</span> Briefing Request Ready to Dispatch!
               </div>
-              <p style="margin-bottom: 0.5rem;">Your default email application has opened with your inquiry pre-filled. Please review and press send.</p>
-              <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">
-                If your email client did not open automatically, you can send your inquiry directly to: 
-                <a href="mailto:contact@orbiz.one" style="color: var(--brand-red); font-weight: 600; text-decoration: underline;">contact@orbiz.one</a>
-              </p>
+              <p style="margin-bottom: 0.75rem;">Your default email application has opened with your inquiry pre-filled. Simply click <strong>Send</strong> to submit.</p>
+              <div style="padding-top: 0.5rem; border-top: 1px dashed rgba(16, 185, 129, 0.3); font-size: 0.85rem; color: var(--text-muted);">
+                Didn't see the email prompt? 
+                <a href="${mailtoUrl}" style="color: var(--brand-red); font-weight: 600; text-decoration: underline;">Click here to open email directly</a> or email us at 
+                <a href="mailto:contact@orbiz.one" style="color: var(--text-main); font-weight: 600;">contact@orbiz.one</a>.
+              </div>
             </div>
           `;
           statusBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

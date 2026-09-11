@@ -1332,27 +1332,101 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      padding: 0.65rem 0.9rem;
+      padding: 0.75rem 1rem;
       background: var(--surface-color-1);
       border: 1px solid var(--border-color);
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 0.9rem;
       color: var(--text-muted);
-      transition: var(--transition);
+      transition: all 0.2s ease;
       user-select: none;
-      min-height: 44px;
+      min-height: 48px;
     }
     .checkbox-card:hover {
       border-color: var(--brand-red);
       color: var(--text-main);
+      background: var(--surface-color-2);
+    }
+    .checkbox-card.is-checked {
+      border-color: var(--brand-red);
+      background: rgba(197, 13, 18, 0.06);
+      color: var(--text-main);
+      font-weight: 600;
     }
     .checkbox-card input[type="checkbox"] {
       accent-color: var(--brand-red);
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
       flex-shrink: 0;
     }
+    .form-input.has-error {
+      border-color: #ef4444 !important;
+      background: rgba(239, 68, 68, 0.04);
+    }
+
+    /* Contact Page Conversion Layout */
+    .contact-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 968px) {
+      .contact-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+    .form-card {
+      background: var(--surface-color-2);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      padding: 2.25rem;
+      position: relative;
+    }
+    @media (max-width: 600px) {
+      .form-card {
+        padding: 1.5rem;
+      }
+    }
+    .trust-pillar {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      background: var(--surface-color-1);
+      border: 1px solid var(--border-color);
+      margin-bottom: 0.75rem;
+    }
+    .trust-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(197, 13, 18, 0.1);
+      color: var(--brand-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .leader-mini-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: var(--surface-color-1);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+    .leader-mini-card:hover {
+      border-color: var(--brand-red);
+    }
+
 
 
