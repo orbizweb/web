@@ -147,16 +147,5 @@
           jobBtn.setAttribute('aria-expanded', (!isCurrentlyActive).toString());
         }
       }
-
-      // Mobile dropdown toggle
-      const dropdownToggle = e.target.closest('.dropdown-toggle');
-      if (dropdownToggle && window.innerWidth <= 900) {
-        const parent = dropdownToggle.closest('.nav-item-dropdown');
-        if (parent) {
-          e.preventDefault();
-          const isOpen = parent.classList.toggle('mobile-open');
-          dropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        }
-      }
     });
 
