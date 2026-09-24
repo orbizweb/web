@@ -247,6 +247,9 @@ It documents every user request, the underlying strategic context, our technical
 ## Git Deployment Log (`origin/main`)
 
 ```
+* c27bd6e - Update products schema from SoftwareApplication to Service to resolve Semrush warnings
+* 48cd9ca - Implement automated background lead engine with Google Sheets sync and dual email notifications
+* 7dfed99 - Add comprehensive project evolution log and implementation changelog
 * f629b43 - Optimize Contact page UX and layout for maximum conversion: split-hero design, executive trust signals, and streamlined lead capture
 * e1144cb - Add interactive consultation form with multi-checkbox areas of interest and update executive leadership titles on Contact page
 * 256de81 - Install Google Analytics 4 (G-S7HCNGBMP2) across all pages and update privacy disclosure
